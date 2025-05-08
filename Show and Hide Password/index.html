@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show & Hide Password </title>
+</head>
+<style>
+    body{
+        background-color: #f1f1f1;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .container{
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        background-color: white;
+        padding: 30px;
+        text-align: center;
+    }
+    .input-container{
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    input{
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    label{
+        font-size: 20px;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .eye-icon{
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        color:#333;
+    }
+</style>
+<body>
+    <div class="container">
+        <label for="passes">Enter Password</label>
+        <div class="input-container">
+            <input id="passes" placeholder="Your password" type="password">
+        <span class="eye-icon" id="eye-icon">👁️</span>
+        </div> 
+    </div>
+
+    <script>
+        let input = document.getElementById('passes');
+        let eyeIcon = document.getElementById('eye-icon');
+        eyeIcon.addEventListener('click', function () {
+            if (input.type === 'password') {
+                input.type = 'text';
+                eyeIcon.textContent = '🙉';
+            } else {
+                input.type = 'password';
+                eyeIcon.textContent = '👁️';
+            }
+        })
+    </script>
+</body>
+</html>

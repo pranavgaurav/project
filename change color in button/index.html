@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Change color on click</title>
+</head>
+<body>
+    <button>Change Color</button>
+    <script>
+        const btn=document.querySelector("button");
+        
+        function random(number) {
+            return Math.floor(Math.random()*(number+1));
+        }
+        // btn.addEventListener("click",()=>{
+        //     const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+        //     document.body.style.backgroundColor=rndCol;
+        // })
+
+        //or
+
+    //   function changeBackground() {
+    //      const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+    //      document.body.style.backgroundColor = rndCol;
+    //   }
+    //   btn.addEventListener("click", changeBackground);
+
+     btn.onclick=() => {
+        const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+        document.body.style.backgroundColor = rndCol;
+     }
+    </script>
+</body>
+</html>
